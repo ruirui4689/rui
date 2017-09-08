@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 3.2 + "px";
+    </script>
+</head>
+<body>
+    
+    <div class="wrap" id="app">
+        <header>
+            <img src="./img/2.jpg" alt="">
+            <span>消息</span>
+            <i class="icon iconfont">&#xe6fb;</i>
+        </header>
+        <main>
+            <div>
+                <div class="search">
+                    <input type="text" placeholder="搜索">
+                    <i class="icon iconfont">&#xe729;</i>
+                </div>
+                <ul class="list">
+                    <li v-for="item in data">
+                        <img v-bind:src="item.img" alt="">
+                        <div>
+                            <h6>{{item.name}}</h6>
+                            <p>{{item.message}}</p>
+                        </div>
+                        <span class="time">{{item.time}}</span>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <a href="javascript:;" class="active">
+                <i class="icon iconfont">&#xe6b0;</i>
+                消息
+            </a>
+            <a href="javascript:;">
+                <i class="icon iconfont">&#xe607;</i>
+                联系人
+            </a>
+            <a href="javascript:;">
+                <i class="icon iconfont">&#xe643;</i>
+                动态
+            </a>
+        </footer>
+    </div>
+
+    <script src="./js/jquery-2.1.0.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/controller.js"></script>
+</body>
+</html>
