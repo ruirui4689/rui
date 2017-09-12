@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="animate.min.css"> -->
+	<script>
+	document.documentElement.style.fontSize=document.documentElement.clientWidth/3.2+"px";
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+
+.fade-enter-active{
+	animation: bounce-in .5s ;
+}
+.fade-leave-active{
+	animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+	<header>
+		<i>＜</i>
+		<span>京东注册</span>
+	</header>
+	<div class="main">
+
+	</div>
+	<template id="tem">
+		<div>
+			<!-- enter-active-class="animated bounce" leave-active-class="animated bounce" -->
+			<transition  name="fade">
+				<div class="inp" v-if="state">
+					<input type="text" v-model="yzm" placeholder="验证码">
+					<input type="number" v-model="sjh" placeholder="手机号">
+					<input type="text" v-model="sjyzm" placeholder="手机验证码">
+					<input type="password" v-model="pwd" placeholder="密码">
+					
+				</div>
+			</transition>
+			<input type="button" @click="dong()" value="注册">
+			<button @click="dong()">点击</button>
+		</div>
+		
+	</template>
+	
+</body>
+<script src="vue2.js"></script>
+<script>
+	var vm=new Vue({
+		el:".main",
+		template:"#tem",
+		data:{
+			yzm:"",
+			sjh:"",
+			sjyzm:"",
+			pwd:"",
+			state:true
+		},
+		methods:{
+			fn(){
+				
+				 console.log("验证码:"+vm.yzm);
+				 console.log("手机号"+vm.sjh);
+				 console.log("手机验证码:"+vm.sjyzm); 
+				 console.log("密码:"+vm.pwd)
+			},
+			dong(){
+				this.state=!this.state
+			}
+		}
+	})
+</script>
+</html>
